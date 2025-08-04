@@ -68,6 +68,8 @@ function setdata(x){
 function startgame(x){
     turn = 0;
     counter = 0;
+    s1 = 0;
+    s2 = 0;
     p1.classList.add("turn")
     count = 0;
     let ids = [];
@@ -186,6 +188,9 @@ function startgame(x){
                     localStorage.bestplayer = finalWinner;
                 }
 
+                let winnermsg = document.getElementById("winnerMessage");
+                winnermsg.innerHTML = finalWinner;
+
                 // 🧠 Update best score menu display
                 bestplayerspan.innerText = localStorage.bestplayer;
                 bestscorespan.innerText = localStorage.bestscore;
@@ -209,6 +214,7 @@ function cleargame(x){
     gameMenu.classList.remove("hide");
     x.parentElement.classList.add("hide");
     container.classList.remove("blur");
+    game.classList.add("hide");
 }
 
 function savesettings(){

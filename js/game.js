@@ -193,6 +193,7 @@ function startgame(x){
                 winBtn.onclick = function(){
                     winmenu.classList.add("hide");
                     container.classList.remove('blur');
+                    game.classList.add("hide");
                     startgame(x);
                 }
             }
@@ -205,9 +206,9 @@ function cleargame(x){
     s2 = 0;
     score2.classList.add("hide");
     player2.classList.add("hide");
-    gameMenu.classList.remove('hide');
-    x.parentElement.classList.add('hide');
-    container.classList.remove('blur');
+    gameMenu.classList.remove("hide");
+    x.parentElement.classList.add("hide");
+    container.classList.remove("blur");
 }
 
 function savesettings(){

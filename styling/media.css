@@ -1,0 +1,19 @@
+@media (min-width: 350px) {
+    .head i {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+    }
+}
+
+@media (max-width: 349px) {
+    .head i {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 415px){
+    div#board {
+        zoom: 87%;
+    }
+}

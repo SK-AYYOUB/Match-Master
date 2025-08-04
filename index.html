@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Match Master</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="styling/helpers.css">
+        <link rel="stylesheet" href="styling/media.css">
+        <link rel="stylesheet" href="styling/main.css">
+        <link rel="stylesheet" href="styling/game.css">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="head">
+                <i class='bx bxl-flask' title="memory match card game"></i>
+                <h2 title="game's title">Match Master</h2>
+                <p title="simple description!">A simple card game. Enjoy!</p>
+            </div>
+            <div class="gameMenu" id="gameMenu">
+                <h4>game menu</h4>
+                <ul>
+                    <li><button onclick="startgame(this)">1 player</button></li>
+                    <li><button onclick="startgame(this)">2 players</button></li>
+                    <li><button onclick="startsettings()">Settings</button></li>
+                    <li><button data-menu="2" class="toMenu">Best score</button></li>
+                    <li><button data-menu="1" class="toMenu">How to play?</button></li>
+                    <li><button data-menu="0" class="toMenu">About the game</button></li>
+                </ul>
+            </div>
+
+            <!--! this part is related to the game  -->
+    
+            <div id="game" class="hide">
+                <button onclick="cleargame(this)" class="btn">exit</button>
+                <h1 id="mode"></h2>
+                <div class="info">
+                    <div id="p1">
+                        <h2 id="player1"></h2>
+                        <h2 id="score1"></h2>
+                    </div>
+                    <div id="p2">
+                        <h2 id="player2" class="hide"></h2>
+                        <h2 id="score2" class="hide"></h2>
+                    </div>
+                </div>
+                <div class="cards" id="board">
+                    <!--todo: Cards will be inserted here dynamically -->
+                    <!-- <div class="card">
+                        <div class="front"></div>
+                        <div class="back"></div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!--! this part is related to settings -->
+
+            <div class="settings hide" id="settings">
+                <h4>Settings</h4>
+                <input type="text" id="p1name" placeholder="player1's name">
+                <input type="text" id="p2name" placeholder="player2's name">
+                <div class="btns">
+                    <button onclick="savesettings()" class="btn">save</button>
+                    <button onclick="clearvalues()" class="btn">clear</button>
+                    <button onclick="cleargame(this.parentElement)" class="btn">exit</button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <h2>Fell free to contact me or explore my github</h2>
+                <div class="sci">
+                    <a href="https://github.com/SK-AYYOUB" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.facebook.com/zakarya.ayyoub.sk?locale=fr_FR" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://www.instagram.com/souiki_zakaria_ayoub/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="mailto:zakarya.ayyoub.souiki@gmail.com" target="_blank"><i class='bx bxl-gmail' ></i></a>
+                    <a href="https://web.telegram.org/a/#-1002289796149" target="_blank"><i class='bx bxl-telegram'></i></a>
+                </div>
+                <p>&copy; 2025 - Made by Souiki Zakarya Ayyoub.</p>
+            </div>
+
+        </div>
+
+
+        <!--! this part is related to the menu's they are displayed to the user! -->
+
+        <div class="menu hide">
+            <h3>About the Game</h3>
+            <p>
+                <strong>Memory Match</strong> is a fast and fun card-flipping game designed to challenge your brain and reflexes.
+                The goal is simple: <strong>find matching pairs of cards</strong> by flipping two at a time.
+            </p>
+            <p>
+                <strong>Created by: Zakarya Ayyoub Souiki</strong>
+                <br>
+                <strong>Purpose:</strong> This game was built as a personal project to improve JavaScript skills, 
+                explore DOM manipulation, and create an engaging interactive experience for all ages.
+            </p>
+            <i class='bx bx-x ok' onclick="ok(parentElement)"></i>
+        </div>
+
+        
+        <div class="menu hide" style="text-align: left;">
+            <h3>How to play ?</h3>
+            <p>You can play in:</p>
+            <ul>
+                <li>🎮 <strong>Single Player Mode</strong> – test your memory and set a high score</li>
+                <li>👥 <strong>Two Player Mode</strong> – take turns and compete for the best score</li>
+            </ul>
+            <p>Scoring rules:</p>
+            <ul>
+                <li>✅ Match two cards → <strong>+2 points</strong></li>
+                <li>❌ Mismatch → <strong>-1 point</strong></li>
+            </ul>
+            <p>The player with the highest score at the end wins!</p>
+            <i class='bx bx-x ok' onclick="ok(parentElement)"></i>
+        </div>
+
+        <div class="menu hide" style="text-align: center;">
+            <h3>Best Score</h3>
+            <p style="font-size: 20px; font-weight: 600;">🏅 Player with the best score:</p>
+            <p><strong id="bestPlayer"></strong><br><strong id="bestPoints"></strong><strong> points</strong></p>
+            <i class='bx bx-x ok' onclick="ok(parentElement)"></i>
+        </div>
+        
+        <div id="winmenu" class="winmenu hide">
+            <h2 id="winnerMessage">🎉 Winner: Player 1 🎉</h2>
+            <p id="finalScores"><span id="scorep1"></span><br><span id="scorep2"></span></p>
+            <div class="btnContainer">
+                <button class="winBtn" id="winBtn">Play Again</button>
+                <button class="exitBtn" id="exitBtn" onclick="cleargame(this.parentElement)">Exit</button>
+            </div>
+        </div>
+
+        <script src="js/game.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

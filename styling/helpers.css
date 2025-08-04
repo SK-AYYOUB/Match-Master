@@ -1,0 +1,21 @@
+.hide {
+    display: none !important;
+}
+
+.blur {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    height: 100vh;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+.card.active {
+    transform: rotateY(180deg);
+}
+
+div.info div.turn {
+    animation: 1s coloringTxt alternate infinite;
+    -webkit-animation: 1s coloringTxt alternate infinite;
+}

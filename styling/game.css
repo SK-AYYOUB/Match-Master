@@ -100,8 +100,8 @@ div.winmenu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90vw;
-    line-height: 40px;
+    width: 60vw;
+    line-height: 80px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);

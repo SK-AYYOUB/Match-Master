@@ -87,6 +87,9 @@ function startgame(x){
                 board.style.setProperty('grid-template-columns', 'repeat(8, 60px');
                 break;
         }
+    }else {
+        maxval = 8;
+        board.style.setProperty('grid-template-columns', 'repeat(4, 60px');
     }
     turn = 0;
     counter = 0;
@@ -289,4 +292,5 @@ function generatecard(cardid){
 }
 
 bestplayerspan.innerText = localStorage.bestplayer || "None";
+
 bestscorespan.innerText = localStorage.bestscore || "0";

@@ -50,6 +50,8 @@ let count;
 let selected = [];
 let selectedCards = [];
 
+let saved = document.getElementById("saved");
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
@@ -243,6 +245,8 @@ function cleargame(x){
 }
 
 function savesettings(){
+    saved.classList.remove("hide");
+    container.classList.add("blur");
     localStorage.p1name = p1name.value.trim() ? p1name.value : 'player1';
     localStorage.p2name = p2name.value.trim() ? p2name.value : 'player2';
     name1 = p1name.value.trim() ? p1name.value : 'player1';
@@ -292,5 +296,4 @@ function generatecard(cardid){
 }
 
 bestplayerspan.innerText = localStorage.bestplayer || "None";
-
 bestscorespan.innerText = localStorage.bestscore || "0";

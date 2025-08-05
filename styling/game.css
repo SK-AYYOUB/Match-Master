@@ -168,3 +168,7 @@ strong {
     animation: coloringTxt 1s infinite alternate;
     -webkit-animation: coloringTxt 1s infinite alternate;
 }
+
+.menu {
+    border: 2px solid white;
+}

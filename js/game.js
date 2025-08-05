@@ -120,12 +120,12 @@ function startgame(x){
 
     cards.forEach(card => {
         card.onclick = function () {
-            if (selected.length < 2 && selected[0] != card) {
-                card.classList.add("flip");
+            if (selected.length < 2 && !card.classList.contains('flip') && !card.classList.contains('active')) {
                 selected.push(card);
+                card.classList.add("flip");
                 count++;
             }
-
+            console.log(count);
             if (count === 2) {
                 //! check if cards are matched
                 if (selected[0].getAttribute('id') === selected[1].getAttribute('id')) {
@@ -195,22 +195,22 @@ function startgame(x){
 
                 scorep1.innerHTML = `${name1}: ${s1} points`;
 
-                let finalWinner = `<strong>Winner</strong><br>${name1}`;
+                let finalWinner = name1;
                 let finalScore = s1;
 
                 if (mode.innerHTML === '2 players mode') {
                     scorep2.innerHTML = `${name2}: ${s2} points`;
 
                     if (s2 > s1) {
-                        finalWinner = `<strong>Winner</strong><br>${name2}`;
+                        finalWinner = name2;
                         finalScore = s2;
                     } else if (s1 === s2) {
                         finalWinner = "There is no winner!";
                     }
                 }
 
-                // Update best score only if finalScore is higher
-                if (finalWinner !== "<strong>There is no winner!</strong>" && parseInt(localStorage.bestscore) < finalScore) {
+                //! Update best score only if finalScore is higher
+                if (finalWinner !== "There is no winner!" && parseInt(localStorage.bestscore) < finalScore) {
                     localStorage.bestscore = finalScore;
                     localStorage.bestplayer = finalWinner;
                 }
@@ -218,7 +218,7 @@ function startgame(x){
                 let winnermsg = document.getElementById("winnerMessage");
                 winnermsg.innerHTML = finalWinner;
 
-                // 🧠 Update best score menu display
+                //! Update best score menu display
                 bestplayerspan.innerText = localStorage.bestplayer;
                 bestscorespan.innerText = localStorage.bestscore;
 

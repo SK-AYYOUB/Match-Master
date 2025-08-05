@@ -106,7 +106,7 @@ div.winmenu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vw;
+    width: 90vw;
     line-height: 40px;
     height: 230px;
     transform: translateX(-50%);
@@ -144,13 +144,13 @@ button.winBtn, button.exitBtn {
 
 button.exitBtn {
     position: relative;
-    right: -10%;
+    right: -5%;
     bottom: -5px;
 }
 
 button.winBtn {
     position: relative;
-    left: -10%;
+    left: -5%;
     bottom: -5px;
 } 
 

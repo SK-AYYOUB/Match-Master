@@ -17,3 +17,49 @@
         zoom: 87%;
     }
 }
+
+@media (max-width: 619px){
+    div#board {
+        zoom: 90%;
+    }
+    div#game .btn {
+        zoom: 90%;
+    }
+}
+
+@media (max-width: 550px){
+    div#board {
+        zoom: 80%;
+    }
+    div#game .btn {
+        zoom: 70%;
+    }
+}
+
+@media (max-width: 500px){
+    div#board {
+        zoom: 70%;
+    }
+    div#game .btn {
+        zoom: 70%;
+    }
+}
+
+@media (max-width: 430px){
+    div#board {
+        zoom: 60%;
+    }
+    div#game .btn {
+        zoom: 70%;
+    }
+}
+
+@media (max-width: 370px){
+    div#board {
+        zoom: 50%;
+    }
+    div#game .btn {
+        zoom: 50%;
+        margin-right: 20px;
+    }
+}

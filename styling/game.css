@@ -1,6 +1,5 @@
 div#game {
     position: relative;
-    height: 650px;
     color: white;
     padding: 0 10px;
 }
@@ -8,12 +7,7 @@ div#game {
 div#game button.btn {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    right: 10px;
 }
 
 div#game h1 {
@@ -22,6 +16,27 @@ div#game h1 {
     text-align: center;
     animation: 2s coloring alternate infinite;
     -webkit-animation: 2s coloring alternate infinite;
+}
+
+#board {
+    display: grid;
+    gap: 12px;
+    width: fit-content;
+    max-width: 500px;
+    margin: 30px auto;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 80px;
+}
+
+#gameContainer {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 div.card {
@@ -64,16 +79,6 @@ div.back {
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     -webkit-backface-visibility: hidden;
-}
-
-div#board {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    justify-content: center;
-    gap: 40px;
-    align-items: center;
-    margin: 20px auto;
 }
 
 div.info {

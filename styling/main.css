@@ -357,3 +357,42 @@ div.settings div.btns {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.difficulty {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    gap: 8px;
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.difficulty label {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    animation: coloringTxt 1s infinite alternate;
+    -webkit-animation: coloringTxt 1s infinite alternate;
+}
+
+.difficulty select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.difficulty select:hover {
+    border-color: #888;
+}
+
+.difficulty select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    background-color: #fff;
+}

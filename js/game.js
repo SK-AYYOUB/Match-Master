@@ -18,7 +18,13 @@ let board = document.getElementById("board")
 
 let cards = []; //! it is used to store cards!
 
+let difficulty = document.getElementById("difficulty");
+difficulty.value = localStorage.difficulty ? localStorage.difficulty : 'easy';
+
 let counter = 0; //! count correct selected cards!
+var maxval = 8;
+
+console.log(maxval)
 
 let bestscore = localStorage.bestscore ? localStorage.bestscore : 0;
 let bestplayer = localStorage.bestplayer ? localStorage.bestplayer : 'None'
@@ -66,6 +72,22 @@ function setdata(x){
 }
 
 function startgame(x){
+    if(localStorage.difficulty){
+        switch(localStorage.difficulty){
+            case 'easy':
+                maxval = 8;
+                board.style.setProperty('grid-template-columns', 'repeat(4, 60px');
+                break;
+            case 'normal':
+                maxval = 14;
+                board.style.setProperty('grid-template-columns', 'repeat(7, 60px)');
+                break;
+            case 'hard':
+                maxval = 20;
+                board.style.setProperty('grid-template-columns', 'repeat(8, 60px');
+                break;
+        }
+    }
     turn = 0;
     counter = 0;
     s1 = 0;
@@ -80,7 +102,7 @@ function startgame(x){
 
     setdata(x);
 
-    for(let i = 1; i <= 8; i++){
+    for(let i = 1; i <= maxval; i++){
         ids.push(i);
         ids.push(i);
     }
@@ -160,7 +182,7 @@ function startgame(x){
             }
 
             //! cards all selected case
-            if (counter == 8) {
+            if (counter == maxval) {
                 // Update best score with correct parsing
                 localStorage.bestscore = localStorage.bestscore ? localStorage.bestscore : "0";
                 winmenu.classList.remove("hide");
@@ -222,6 +244,18 @@ function savesettings(){
     localStorage.p2name = p2name.value.trim() ? p2name.value : 'player2';
     name1 = p1name.value.trim() ? p1name.value : 'player1';
     name2 = p2name.value.trim() ? p2name.value : 'player2';
+    localStorage.difficulty = difficulty.value;    
+    switch(localStorage.difficulty){
+        case 'easy':
+            maxval = 8;
+            break;
+        case 'normal':
+            maxval = 14;
+            break;
+        case 'hard':
+            maxval = 20;
+            break;
+    }
 }
 
 function startsettings(){

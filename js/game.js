@@ -190,14 +190,14 @@ function startgame(x){
 
                 scorep1.innerHTML = `${name1}: ${s1} points`;
 
-                let finalWinner = name1;
+                let finalWinner = `<strong>Winner</strong><br>${name1}`;
                 let finalScore = s1;
 
                 if (mode.innerHTML === '2 players mode') {
                     scorep2.innerHTML = `${name2}: ${s2} points`;
 
                     if (s2 > s1) {
-                        finalWinner = name2;
+                        finalWinner = `<strong>Winner</strong><br>${name2}`;
                         finalScore = s2;
                     } else if (s1 === s2) {
                         finalWinner = "There is no winner!";
@@ -205,7 +205,7 @@ function startgame(x){
                 }
 
                 // Update best score only if finalScore is higher
-                if (finalWinner !== "There is no winner!" && parseInt(localStorage.bestscore) < finalScore) {
+                if (finalWinner !== "<strong>There is no winner!</strong>" && parseInt(localStorage.bestscore) < finalScore) {
                     localStorage.bestscore = finalScore;
                     localStorage.bestplayer = finalWinner;
                 }

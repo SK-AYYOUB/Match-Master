@@ -92,6 +92,7 @@ div.info div {
 }
 
 div.winmenu {
+    position: relative;
     background-color: black;
     border: 2px solid white;
     color: white;
@@ -105,8 +106,9 @@ div.winmenu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60vw;
-    line-height: 80px;
+    width: 50vw;
+    line-height: 40px;
+    height: 230px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -122,7 +124,8 @@ button.winBtn, button.exitBtn {
     background-color: #ff3300;
     padding: 10px;
     border: none;
-    width: 130px;
+    max-width: 130px;
+    width: 80px;
     color: white;
     font-size: 20px;
     font-weight: 600;
@@ -138,6 +141,18 @@ button.winBtn, button.exitBtn {
     -o-transition: .5s;
     cursor: pointer;
 }
+
+button.exitBtn {
+    position: relative;
+    right: -10%;
+    bottom: -5px;
+}
+
+button.winBtn {
+    position: relative;
+    left: -10%;
+    bottom: -5px;
+} 
 
 button.winBtn:hover, button.exitBtn:hover {
     box-shadow: 0 0 10px #ff3300;

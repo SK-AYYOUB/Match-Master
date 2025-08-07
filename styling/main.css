@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #020024;
+    background-color: #fff9c2;
 }
 
 div.container {
@@ -22,7 +22,7 @@ div.container div.gameMenu button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2afc00;
+    background-color: #cc2fb2;
     color: #ffffff;
     cursor: pointer;
     width: 100%;
@@ -32,16 +32,22 @@ div.container div.gameMenu button {
     list-style: none;
     border-radius: 12px;
     font-size: 20px;
+    font-weight: 700;
     letter-spacing: 1px;
     transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 div.head {
+    background-color: #252525;
     position: relative;
     border-bottom: 2px solid #c0a96f;
     padding: 10px;
     text-align: center;
-    color: #ffffff;
+    color: #ff0000;
 }
 
 div.head h2 {
@@ -50,13 +56,15 @@ div.head h2 {
 }
 
 div.head p {
+    animation: coloringTxt 1s alternate infinite;
     font-size: 20px;
+    -webkit-animation: coloringTxt 1s alternate infinite;
 }
 
 div.head i {
     cursor: pointer;
-    color: red;
-    text-shadow: 0 0 10px orange;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff3c00;
     transform: scale(4);
     -webkit-transform: scale(4);
     -moz-transform: scale(4);
@@ -70,8 +78,8 @@ div.head i {
 }
 
 div.head i:hover {
-    color: goldenrod;
-    text-shadow: 0 0 10px red;
+    color: #ff3300;
+    text-shadow: 0 0 10px #ff4800;
 }
 
 div.head h2,
@@ -104,7 +112,7 @@ div.container h4 {
     }
 
     50% {
-        color: rgb(255, 208, 0);
+        color: rgb(255, 0, 221);
     }
     75% {
         color: blue;
@@ -124,16 +132,16 @@ div.gameMenu ul li {
 
 
 div.gameMenu ul button:hover {
-    background-color: #2afc00;
+    background-color: #cc2fb2;
     color: #2f4f4f;
-    box-shadow: 0 0 10px #2afc00;
+    box-shadow: 0 0 10px #cc2fb2;
     transform: scale(1.05);
 }
 
 div.gameMenu ul button:active {
     background-color: transparent;
-    color: #2afc00;
-    outline: 2px solid #2afc00;
+    color: #cc2fb2;
+    outline: 2px solid #cc2fb2;
     transform: scale(0.97);
     -webkit-transform: scale(0.97);
     -moz-transform: scale(0.97);
@@ -145,6 +153,7 @@ div.footer {
     border-top: 2px solid #c0a96f;
     padding: 20px 10px;
     color: #ffffff;
+    background-color: #252525;
 }
 
 div.footer p{
@@ -341,9 +350,27 @@ div.settings input:hover {
     outline: 2px solid #008cff;
 }
 
+div.settings select, option{
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div.settings select:focus {
+    background-color: #111;
+    color: #008cff;
+    border: 2px solid #008cff;
+    box-shadow: 0 0 10px #008cff;
+    outline: none;
+}
+
+
 div.settings input:focus {
-    outline: 2px solid #00ff00;
-    box-shadow: 0 0 10px #00ff00;
+    outline: 2px solid #cc2fb2;
+    box-shadow: 0 0 10px #cc2fb2;
     background-color: black;
     transform: scale(1.1);
     -webkit-transform: scale(1.1);

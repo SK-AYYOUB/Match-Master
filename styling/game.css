@@ -43,8 +43,8 @@ div.card {
     position: relative;
     width: 60px;
     height: 80px;
-    background-color: rgb(255, 226, 148);
-    box-shadow: 0 0 10px rgb(0, 255, 34);
+    background-color: #ffce48;
+    box-shadow: 0 0 10px #000000;
     cursor: pointer;
     transform-style: preserve-3d;
     border-radius: 10px;
@@ -53,6 +53,10 @@ div.card {
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
+}
+
+div.card:hover {
+    background-color: rgb(255, 99, 99);
 }
 
 div.front,
@@ -85,6 +89,7 @@ div.info {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    color: black;
 }
 
 div.info div {
